@@ -1,0 +1,31 @@
+OpenCV Contrib (opencv-contrib-python)
+Command: pip install opencv-contrib-python
+Why:
+Provides core OpenCV functions: image/video reading, processing, display.
+Includes cv2.face module for LBPH Face Recognizer (needed for face recognition).
+Regular opencv-python does not include face recognition modules.
+
+NumPy (numpy)
+Command: pip install numpy
+Why:
+Stores labels and image data as arrays for training.
+Handles numerical operations and matrix manipulations efficiently.
+Required for LBPH face recognizer to process images.
+
+os (built-in Python module)
+Command: None (comes with Python)
+Why:
+Handles file paths and checks if image files exist.
+Useful for managing reference images and datasets.
+Optional Verification
+
+Command:
+import cv2, numpy as np, os
+print(cv2.__version__)
+print(np.__version__)
+print(os.name)
+print(dir(cv2.face))  # Should list LBPHFaceRecognizer_create
+
+Why:
+Confirms that OpenCV, NumPy, and os are installed correctly.
+Ensures the face recognition module is accessible.

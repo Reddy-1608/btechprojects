@@ -1,0 +1,44 @@
+Import PIL (Pillow) library
+from PIL import Image
+Why: Provides image processing functions like opening, resizing, and saving images.
+Installation: If not installed, run: pip install pillow.
+
+Open the image
+image_path = "OIP.jpeg"
+img = Image.open(image_path)
+
+Loads the JPEG image from the given path.
+Returns a PIL.Image.Image object.
+
+Display original image size
+print(f"Original size: {img.size}")
+
+img.size returns a tuple (width, height).
+Helps to know the current dimensions before resizing.
+
+Define new size for resizing
+new_width = 400
+new_height = 400
+new_size = (new_width, new_height)
+Sets target dimensions for the resized image.
+Can be adjusted according to your needs.
+
+Resize the image
+resized_img = img.resize(new_size)
+Creates a new image object with the defined size.
+Maintains aspect ratio only if manually calculated; otherwise, it stretches to the new size.
+
+Save the resized image in PNG format
+png_image_path = "resized_image.png"
+resized_img.save(png_image_path, "PNG")
+Converts and saves the image as a PNG file.
+Ensures compatibility and potentially lossless compression.
+
+Print confirmation
+print(f"Resized image saved as '{png_image_path}' (in PNG format)")
+Confirms that the image was successfully resized and saved.
+
+Summary
+Library: Pillow (PIL) → install via pip install pillow.
+Functions used: Image.open(), img.size, img.resize(), img.save().
+Purpose: Open a JPEG image, resize it to a defined size, and save it as PNG.

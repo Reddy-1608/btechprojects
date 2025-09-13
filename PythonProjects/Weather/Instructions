@@ -1,0 +1,45 @@
+Import json library
+Converts JSON responses from the API into Python dictionaries.
+Why: Makes it easy to access temperature, humidity, wind, etc.
+
+Import requests library
+Sends HTTP requests to access the weather API.
+Why: Needed to fetch live weather data from the internet.
+Installation: pip install requests
+
+Import speak from pyttsx3
+Converts text to speech so the program can speak the weather.
+Installation: pip install pyttsx3
+
+Ask the user for a city name
+city = input("enter the city name: ")
+Takes input to fetch weather data for the specified location.
+
+Create API URL
+url = f"https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q={city}"
+Replace YOUR_API_KEY with your WeatherAPI key.
+
+Prepares the URL with the city query.
+Send a GET request to the API
+x = requests.get(url)
+Fetches data from the weather API for the requested city.
+
+Convert JSON response to Python dictionary
+wdic = json.loads(x.text)
+Allows easy access to weather details like temperature, humidity, etc.
+
+Extract temperature in Celsius
+y = wdic["current"]["temp_c"]
+print(wdic["current"]["temp_c"])
+Stores the temperature for speaking and prints it to the console.
+
+Speak the temperature
+speak(f"the temperature in {city} is {y} degrees")
+Uses pyttsx3 to read out the temperature in a human voice.
+
+Summary
+Libraries used: json (parse data), requests (get API data), pyttsx3 (text-to-speech).
+Purpose: Fetch live weather information and announce it.
+Input: City name from the user.
+
+Output: Temperature printed on console and spoken aloud.

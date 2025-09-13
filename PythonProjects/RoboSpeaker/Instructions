@@ -1,0 +1,29 @@
+Import pyttsx3 library
+import pyttsx3
+from pyttsx3 import speak
+Why: pyttsx3 is used for converting text into speech (offline TTS engine).
+speak() is used to directly speak the given text.
+Installation: pip install pyttsx3
+
+Print welcome message to console
+print("welcome to ROBO SPEAKER")
+Displays a greeting on the terminal.
+
+Speak welcome message
+speak("welcome to ROBO SPEAKER please enter your input")\
+
+Converts the welcome text into speech.
+Start an infinite loop
+while True:
+Continuously asks the user for input until they choose to exit.
+
+Take input from the user
+x = input("enter your word which has to be spoken('for exiting the program type exit'): ")
+Reads text input from the user.
+Check if the user wants to exit
+if(x.lower() == "exit"):
+Converts input to lowercase to handle case-insensitive exit.\
+
+Exit sequence
+print("exiting the program")
+print("goodbye")

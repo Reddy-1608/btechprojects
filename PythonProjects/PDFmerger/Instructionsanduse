@@ -1,0 +1,43 @@
+Import PyPDF2 library
+from PyPDF2 import PdfMerger
+Why: Provides functions to read, merge, split, and manipulate PDF files.
+Installation: If not installed, run: pip install PyPDF2.
+
+Create an instance of PdfMerger
+merger = PdfMerger()
+Initializes a merger object to combine multiple PDFs into one.
+
+List PDF files to merge
+pdf_files = ['basic-text.pdf', 'fillable-form.pdf']
+A Python list containing the paths or names of PDF files.
+Order in the list determines the order in the merged PDF.
+
+Append each PDF to the merger
+for pdf in pdf_files:
+    merger.append(pdf)
+Loops through each PDF file in the list.
+Appends each PDF sequentially to the merger object.
+
+Write the merged PDF to a new file
+output_pdf = 'merged_output.pdf'
+merger.write(output_pdf)
+Combines all appended PDFs into a single PDF file.
+Saves it with the specified output file name.
+
+Close the PdfMerger object
+merger.close()
+Frees resources and closes the merger object to avoid memory leaks.
+
+Print success message
+print(f"The PDFs have been successfully merged into '{output_pdf}'")
+Confirms that the merging process is complete.
+
+Summary
+Library: PyPDF2 → install via pip install PyPDF2.
+Purpose: Merge multiple PDF files into a single PDF.
+
+Key Methods Used:
+PdfMerger() → create a merger object
+.append(pdf) → add PDFs
+.write(output) → save the merged PDF
+.close() → free resources
